@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/checkout.css"/>
+    <link rel="stylesheet" href="/fruit&vegetables/check.css">
+    <script src="https://kit.fontawesome.com/499a698297.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="cont1">
+        <div>
+            <a href="./homepage.html"><img src="https://resources.dunzo.com/web-assets/prod/_next/static/images/logo-4d2d81aefcf296bc100d9edc114c2ea5.png"/></a>
+        </div>
+        <div>
+            <i class="fas fa-user-circle fa-2x"></i>
+            <p>Profile</p>
+        </div>
+    </div>
+    <div id="cont2">
+        <div id="cont2_1">
+            <div id="cont2_2">
+                <h1>Delivery Address</h1>
+                <p>Some details in your current address is missing. Add it for a hassle-free delivery experience</p>
+                <br>
+                <br>
+                <label>Address</label><br>
+                <input id="inp" type="text" placeholder="Enter your complete Address"/>
+                <button id="btn">Submit</button>
+                <!-- This button need to be given functionality if clicked redirected to the payment page. -->
+            </div>
+            <div id="cont2_3">
+                <!-- <div> -->
+                    <div id="cont2_4">
+                        <h1>Recommended For You</h1>
+                        <h4>We think you'll like these items based on your cart</h4>
+                    </div>
+                    <div id="cont2_5">
+                        <div class="class1">
+                            <img src="https://ik.imagekit.io/dunzo/tr:w-$w$,h-$h$,cm-pad_resize/ejRHTEtlMmc3dE5QMzZJQTFISkhtZz09-product_image.jpg"/>
+                            <h4>Papaya</h4>
+                            <br>
+                            <p>1Kg</p>
+                            <br>
+                            <div class="class1_1">
+                                <h4>₹80</h4>
+                                <button>+ ADD</button>
+                            </div>
+                        </div>
+                        <div class="class1">
+                            <img src="https://ik.imagekit.io/dunzo/tr:w-$w$,h-$h$,cm-pad_resize/K0JVc1lienM4QS8yZ3RzcXE5ckxtdz09-product_image.jpg"/>
+                            <h4>Pomegrenate</h4>
+                            <br>
+                            <p>1Kg</p>
+                            <br>
+                            <div class="class1_1">
+                                <h4>₹300</h4>
+                                <button>+ ADD</button>
+                            </div>
+                        </div>
+                        <div class="class1">
+                            <img src="https://ik.imagekit.io/dunzo/tr:w-$w$,h-$h$,cm-pad_resize/ZDR5WUxRanhnakNXb05rRUhaK2ZxQT09-product_image.jpg"/>
+                            <h4>Watermelon</h4>
+                            <br>
+                            <p>1Pc</p>
+                            <br>
+                            <div class="class1_1">
+                                <h4>₹180</h4>
+                                <button>+ ADD</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                <!-- </div> -->
+
+                
+            </div>
+        </div>
+        <!-- @@@@@@@@@@@ -->
+        <div class="flexSum">
+            <h2>Your Cart</h2>
+            <div class="name-flex-boxes">
+                <span>From</span>
+                <a href="cartitem.html"> <span id="name-of-store">Shiv Fruits & Vegetables</span></a>
+            </div>
+            <hr>
+            <div class="product-flex-boxes">
+                <span style="opacity: 1;">Product</span>
+                <div id="discounted_price"></div>
+            </div>
+
+            <div class="instruction">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKndchknDE2RlUibBDrKr9IRWODGHIdadv-A&usqp=CAU"
+                    alt="icon" />
+                <input type="text" placeholder="Any instructions for the delivery patners?" id="inst">
+            </div>
+
+            <div class="invoice-flex-boxes">
+
+                <span style="opacity: 1;">Invoice</span>
+                <div class="total_price">
+                    <span>Item total</span>
+                    <span id="display1"></span>
+                </div>
+
+                <hr style="margin-top: 1%;">
+
+                <div class="free-delivery">
+                    <span>Partner delivery fee</span>
+                    <span style="color: #00B37A">Free</span>
+                </div>
+
+                <hr style="margin-top: 1%;">
+
+                <div class="pay">
+                    <span>To pay</span>
+                    <span id="final"></span>
+                </div>
+
+            </div>
+
+            <!-- <button onclick="shoppingComplete(event)">Complete Payment</button> -->
+            <h1 id="notification"></h1>
+        </div>
+        <!-- @@@@@@@@@@@ -->
+    </div>
+</body>
+</html>
+
+<script>
+
+    let btn = document.getElementById("btn");
+    
+    btn.addEventListener("click", function(){
+        let inp = document.getElementById("inp").value;
+        if(inp.length < 15){
+            alert("Mininmum address length is 15 characters")
+        }
+        else{
+            window.location.href = "payment.html";
+        }
+        
+    });
+
+
+    //===========================
+    var count1 = 0;
+
+    let abc = JSON.parse(localStorage.getItem("cart"));
+    var data_div = document.getElementById('data1')
+    var m = 0;
+    var arr = [];
+    for (let i = 0; i < abc?.length; i++) {
+
+        let y = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.src = abc[i].img;
+
+        let price = document.createElement("p");
+        price.innerHTML = `Price : ${abc[i].price}`;
+
+
+        let des = document.createElement("p");
+        des.innerHTML = `Qty : ${abc[i].qty}`;
+
+        let brand = document.createElement("p");
+        brand.innerHTML = `Brand :${abc[i].name} `;
+        m += Number(abc[i].price);
+        arr.push(abc[i].name)
+    }
+
+    function cartItem() {
+
+        let data = JSON.parse(localStorage.getItem("cart"));
+        let valid = localStorage.getItem("coupen");
+        var n = document.getElementById('display1');
+        var g = document.getElementById('final');
+        let brand = document.getElementById('discounted_price');
+        var element = document.createElement('div')
+        html = "";
+        for (i = 0; i < arr.length; i++) {
+            html += `<div id=${i + 1}><span>➤ </span>${arr[i]}</div><button class="remove-btn" onclick=Remove(${i + 1})>Remove</button>`
+            brand.innerHTML = `Items :${html}`;
+        }
+
+        if (valid?.length > 0) {
+            n.innerHTML = `<h2><b>Total Price :₹ ${m - ((m * 30) / 100)}</b></h2>`;
+            g.innerHTML = `<h2><b>Total Price :₹ ${m - ((m * 30) / 100)}</b></h2>`;
+            localStorage.removeItem('coupen')
+
+        } else {
+            n.innerHTML = `<h2><b>Total Price : ₹ ${m}</b><h2>`;
+            g.innerHTML = `<h2><b>Total Price : ₹ ${m}</b><h2>`;
+        }
+    }
+    cartItem()
+    function apply() {
+        var n = document.getElementById('priceD');
+        var coupen = document.getElementById('btnSave').value
+        if (coupen == "masai30") {
+            n.innerHTML = `<h2><b>Total Price :₹ ${m - ((m * 30) / 100)}</b></h2>`;
+
+        }
+
+    }
+
+    function Remove(val) {
+        let data = JSON.parse(localStorage.getItem("cart"));
+        var p = document.getElementById(val)
+        arr1 = [];
+        for (i = 0; i < data.length; i++) {
+            if (i + 1 != val) {
+                arr1.push(data[i])
+            }
+        }
+        data = arr1;
+
+        localStorage.setItem('cart', JSON.stringify(arr1));
+        window.location.reload();
+    }
+
+    
+</script>
+
