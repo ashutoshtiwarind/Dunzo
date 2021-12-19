@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/payment.css"/>
+    <script src="https://kit.fontawesome.com/499a698297.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="cont1">
+        <div>
+            <a href="/homepage.html"><img src="https://resources.dunzo.com/web-assets/prod/_next/static/images/logo-4d2d81aefcf296bc100d9edc114c2ea5.png"/></a>
+        </div>
+        <div>
+            <i class="fas fa-user-circle fa-2x"></i>
+            <p>Profile</p>
+        </div>
+    </div>
+    <div id="cont2">
+        <div id="cont2_1">
+            <div id="cont2_2">
+                <div>
+                    <h1>Select Payment Method</h1>
+                    <br>
+                    <p>Select the payment method from the existing one or create one</p>
+                    <br>
+                </div>
+                <div id="cont2_3">
+                    <div id="cont2_4">
+                        <h3 style="background-color: white;" id="wallet">Wallets</h3>
+                        <h3 id="creditCard">Credit and Debit Cards</h3>
+                        <h3 id="upi">UPI</h3>
+                    </div>
+                    <div id="parentcont2_5">
+                        <!-- <div id="cont2_5">
+                            <div id="cont2_6">
+                                <img src="https://ik.imagekit.io/dunzo/tr:w-72,h-72,cm-pad_resize_payment_ico/icons/R4_Icons/payment/PayTM.png"/>
+                                <h4>Paytm</h4>
+                            </div>
+                            <p>Upto 100 cashback, Order above 199</p>
+                            <hr>
+                            <h5>Your Paytm account is not linked.Please link your Account.</h5>
+                            <button>Link Account</button>
+                        </div> -->
+                        <!-- <div id="upiId">
+                            <div id="upiId_1">
+                                <div>
+                                    <img src="https://ik.imagekit.io/dunzo/tr:w-72,h-72,cm-pad_resize_payment_ico/icons/R4_Icons/payment/UPI.png"/>
+                                </div>
+                                <div>
+                                    <h4>Add New UPI ID</h4>
+                                </div>
+                            </div>
+                            <hr>
+                            <br>
+                            <p>Enter UPI ID</p>
+                            <div id="upiId_2">
+                                <div>
+                                    <input type="text" placeholder="E.g. Rahul@icici">
+                                </div>
+                                <div>
+                                    <button>Verify & Pay</button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <!-- <div id="cont3">
+            <div id="cont3_1">
+                <h1>Your Cart</h1>
+                <p>Items from Shiv Fruits and Vegetables</p>
+
+
+            </div>
+            <div id="cont3_2">
+                <p>No Contact Delivery</p>
+                <br>
+                <h5>Partner will check with you and leave the order outside the door</h5>
+            </div>
+
+            <div id="cont3_3">
+                <div id="cont3_4">
+                    <div><i class="fas fa-receipt"></i></div>
+                    <div><h5>Invoice</h5></div>
+                </div>
+                <br>
+                <div class="class3_5">
+                    <div><p>Item Total</p></div>
+                    <div>₹ 170</div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="class3_5">
+                    <div><p>Partner Delivery Fee</p></div>
+                    <div><p>Free</p></div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="class3_5">
+                    <div><h4>To Pay</h4></div>
+                    <div>₹ 170</div>
+                </div>
+
+            </div>
+
+        </div> -->
+    </div>
+    <div id="overlayer" style="display: none;">
+        <div class="loader"></div>
+    </div>    
+    
+</body>
+</html>
+
+<script>
+    let cont2_5 = document.getElementById("cont2_5");
+
+    let parentcont2_5 = document.getElementById("parentcont2_5");
+
+    let wallet = document.getElementById("wallet");
+    wallet.addEventListener("click", walletFunc)
+
+    let creditCard = document.getElementById("creditCard");
+    creditCard.addEventListener("click", creditFunc)
+
+    let upi = document.getElementById("upi");
+    upi.addEventListener("click", upiFunc);
+
+    walletFunc();
+
+    function walletFunc(){
+ // alert("clicked")
+ parentcont2_5.innerHTML = `<div id="cont2_5">
+                            <div id="cont2_6">
+                                <img src="https://ik.imagekit.io/dunzo/tr:w-72,h-72,cm-pad_resize_payment_ico/icons/R4_Icons/payment/PayTM.png"/>
+                                <h4>Paytm</h4>
+                            </div>
+                            <p>Upto 100 cashback, Order above 199</p>
+                            <hr>
+                            <h5>Your Paytm account is not linked.Please link your Account.</h5>
+                            <button>Link Account</button>
+                        </div>`
+        wallet.style.backgroundColor = "white";
+        creditCard.style.backgroundColor = "#f0f5f7"
+        upi.style.backgroundColor = "#f0f5f7";
+    };
+       
+
+    function creditFunc()
+    {
+        // alert("clicked");
+        parentcont2_5.innerHTML = ` <div id="credit">
+        <div>
+            <label>Card Number</label><br>
+            <input id="cardNum" type="text" placeholder="************1234"/>
+        </div>
+        <!-- <div id="credit_1"> -->
+            <div>
+                <label>Expiry Date</label><br>
+                <input  id="cardExp" type="text" placeholder="MM/YYYY"/>
+            </div>
+            <div>
+                <label>CVV</label><br>
+                <input id="cardCvv" type="password" placeholder="e.g.123"/>
+            </div>
+        <!-- </div> -->
+        <div>
+            <label>Name On Card</label><br>
+            <input type="text" placeholder="e.g.Rahul Mishra"/>
+        </div>
+        <button id="cardBtn" onclick="payFunc()">Add Card & Pay</button>
+    </div>`
+    wallet.style.backgroundColor = "#f0f5f7"
+    creditCard.style.backgroundColor = "white";
+    upi.style.backgroundColor = "#f0f5f7";
+    };
+
+    function upiFunc(){
+        // alert("clicked");
+        parentcont2_5.innerHTML = `<div id="upiId">
+                            <div id="upiId_1">
+                                <div>
+                                    <img src="https://ik.imagekit.io/dunzo/tr:w-72,h-72,cm-pad_resize_payment_ico/icons/R4_Icons/payment/UPI.png"/>
+                                </div>
+                                <div>
+                                    <h4>Add New UPI ID</h4>
+                                </div>
+                            </div>
+                            <hr>
+                            <br>
+                            <p>Enter UPI ID</p>
+                            <div id="upiId_2">
+                                <div>
+                                    <input type="text" placeholder="E.g. Rahul@icici">
+                                </div>
+                                <div>
+                                    <button>Verify & Pay</button>
+                                </div>
+                            </div>
+                        </div>`
+        upi.style.backgroundColor = "white";
+        wallet.style.backgroundColor = "#f0f5f7"
+        creditCard.style.backgroundColor = "#f0f5f7";
+    }
+
+
+    function payFunc(){
+        // console.log("clicked");
+        let cardNum = document.getElementById("cardNum").value;
+        let cardCvv = document.getElementById("cardCvv").value;
+
+        if(cardNum.length != 16){
+            alert("Card Number to be in 16 digits");
+            return true;
+        }
+        else if(cardCvv.length != 3){
+            alert("CVV Number to be in 3 digits");
+            return true;
+        }
+        else{
+            // alert("Payment Successfull ! Your order is on its way.")
+            document.getElementById("overlayer").style.display = 'block';
+            setTimeout(function(){
+                document.getElementById("overlayer").style.display = 'none';
+                alert("Payment Successfull ! Your order is on its way.");
+                window.location.href = "/homepage.html";
+                
+            },3000)
+        }
+        // alert("Payment Successfull ! Your order is on its way.")
+        // window.location.href = "checkout.html";
+    }
+    // alert("Payment Successfull ! Your order is on its way.")
+    // window.location.href = "checkout.html";
+
+</script>
