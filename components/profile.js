@@ -173,3 +173,17 @@ function abt(){
     about.style.backgroundColor="white";
 
 }
+
+var redirect1 = document.getElementById("company");
+redirect1.addEventListener("click", red12);
+
+function red12(){
+  window.location.href="afterLogin.html"
+}
+
+var logout = document.getElementById("logout");
+logout.addEventListener("click", redirect12)
+function redirect12(){
+  alert("Logout Successful!")
+  window.location.href="homepage.html"
+}
