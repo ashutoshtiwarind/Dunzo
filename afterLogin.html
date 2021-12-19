@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dunzo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      href="https://ik.imagekit.io/dunzo/tr:w-72,h-72,cm-pad_resize_payment_ico/icons/R4_Icons/payment/dunzo_icon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="styles/homepage.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="nav">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#">
+          <img
+            src="https://resources.dunzo.com/web-assets/prod/_next/static/images/logo-4d2d81aefcf296bc100d9edc114c2ea5.png"
+            alt=""
+            height="30px"
+            width="130px"
+          />
+        </a>
+        <br />
+        <p class="location">
+          <a href="#" title="Mumbai"
+            ><i class="fa fa-map-marker fa-lg" style="color: #00b37a"></i
+            >&nbsp;<b>Mumbai, Maharashtra, ...</b></a
+          ><i class="fa fa-angle-down fa-lg" style="color: #00b37a"></i>
+        </p>
+        <p class="partners"><b>Dunzo for Partners</b></p>
+        <p class="business">
+          <b>Business with Dunzo</b> &nbsp;<i
+            class="fa fa-angle-down fa-lg"
+          ></i>
+        </p>
+        <div class="search">
+          <img
+            src="http://assets.stickpng.com/images/585e4ad1cb11b227491c3391.png"
+            alt=""
+            height="30px"
+            width="30px"
+          />
+          Search
+        </div>
+        <div class="cart">
+          <img
+            src="https://cdn0.iconfinder.com/data/icons/minimal-set-seven/32/minimal-49-512.png"
+            alt=""
+            height="30px"
+            width="30px"
+          />
+          Cart
+        </div>
+        <!-- <button class="signIn">Sign out</button> -->
+        <div id="profile12">
+            <img src="https://cdn-icons-png.flaticon.com/128/748/748128.png" 
+          alt=""
+          height="30px"
+              width="30px">
+              Profile
+          </div>
+        <!--Modal -->
+        <div class="modal-bg">
+          <div class="modal">
+            <span class="modal-close">X</span>
+            <div class="logo">
+              <img
+                height="70px"
+                width="65px"
+                src="https://resources.dunzo.com/web-assets/prod/_next/static/images/signin-icon-cb6e6a706f01b84896e60235a2392ac9.png"
+                alt=""
+              />
+            </div>
+            <div class="sign-text">
+              <p class="bold-sign">
+                Sign in <br />
+                <b class="dull-sign">Get started with Dunzo</b>
+              </p>
+            </div>
+            <div class="enter-mob">
+              <p class="bold-mob">
+                <b style="color: red">*</b>Enter your mobile number
+              </p>
+            </div>
+            <div class="input-mob">
+              <div class="input-1">
+                <!-- <i class="fa fa-phone fa-10px"></i> -->
+                <img
+                  class="phone-icon"
+                  src="data:image/png;base64,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"
+                  alt=""
+                />
+              </div>
+              <div class="input-2">
+                <p>+91</p>
+              </div>
+              <div class="input-3">
+                <input type="tel" placeholder="Mobile Number" required />
+              </div>
+            </div>
+            <br /><br />
+            <div class="accept">
+              <div class="check">
+                <input type="checkbox" />
+              </div>
+              <div class="t&c">
+                &nbsp; I accept the Terms of Use & Privacy Policy | View T&C<i
+                  class="fa fa-angle-down fa-lg"
+                  style="color: #00b37a"
+                ></i>
+              </div>
+            </div>
+            <div class="send-otp">
+              <button class="otp modal-btn1">Send OTP</button>
+              <!--Modal -->
+              <div class="modal-bg1">
+                <div class="modal1">
+                  <span class="modal-close1">X</span>
+                  <div class="logo1">
+                    <img
+                      height="70px"
+                      width="65px"
+                      src="https://resources.dunzo.com/web-assets/prod/_next/static/images/signin-icon-cb6e6a706f01b84896e60235a2392ac9.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="sign-text1">
+                    <p class="bold-sign1">
+                      Sign in <br />
+                      <b class="dull-sign1">Get started with Dunzo</b>
+                    </p>
+                  </div>
+                  <div class="enter-mob1">
+                    <p class="bold-mob1">
+                      <b style="color: red">*</b>Enter your OTP
+                    </p>
+                  </div>
+                  <div class="input-mob1">
+                    <div class="input-11">
+                      <!-- <i class="fa fa-phone fa-10px"></i> -->
+                      <img
+                        class="phone-icon"
+                        src="data:image/png;base64,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"
+                        alt=""
+                      />
+                    </div>
+                    <div class="input-21">
+                      <p></p>
+                    </div>
+                    <div class="input-31">
+                      <input
+                        id="mob-otp"
+                        type="tel"
+                        placeholder="Enter Your OTP"
+                      />
+                    </div>
+                  </div>
+                  <br /><br />
+                  <div class="send-otp1">
+                    <button onclick="logIn()" class="otp1 modal-btn1">
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sub-head">
+      <div class="box">
+        <img
+          src="https://resources.dunzo.com/web-assets/prod/_next/static/images/paan-19e5a0c9e5abb38cb33a01ad336f2f17.png"
+          alt=""
+          height="30px"
+          width="30px"
+        />
+        <p class="headline">
+          &nbsp;&nbsp; Order Paan items, munchies and much more on our new Dunzo
+          Mo app
+        </p>
+        <p class="headline2">
+          Download Dunzo Mo app now &nbsp;<i
+            class="fa fa-angle-right fa-lg"
+            style="color: #00d290"
+          ></i>
+        </p>
+      </div>
+    </div>
+    <div class="panel">
+      <p>
+        <b style="color: #00d290">Home</b> &nbsp;<i
+          class="fa fa-arrow-right"
+          style="color: grey"
+        ></i>
+        &nbsp;<b style="color: grey">Mumbai</b>
+      </p>
+    </div>
+    <div class="mumbai-head">
+      <p class="title">Mumbai</p>
+      <p class="content" style="color: grey">
+        Why step out when you can get everything delivered home with the tap of
+        a button? Mumbai's favourite delivery app gets you Food, Grocery,
+        Medicine, Pet Suppliers, Fruits & Vegetables, Meat & Fish, Health &
+        Wellness, Gifts and Send Packages from one end of the city to the other.
+        From your local kirana stores to your favourite brands, grocery shopping
+        to your forgotten charger, we are always on the move for you. Why worry
+        about your chores, when you can get it all Dun!
+      </p>
+    </div>
+    <div class="thumbnails">
+      <div class="category">
+        <img
+          class="images"
+          src="https://ik.imagekit.io/dunzo/home/tr:w-488,h-360_home_icon/operator-FFWUCfzmUzhok89HMYt0ON2Gy5oZECO73gRenPw11HxAeCLBtTBOG8FMqMTe92UOnScOPMUnjYDcaPVxx7wSFJwXJ3kSR3YRsPby4EgC4zW2mVYLc99zuvVh7O2Ppmx2QMQd40UiwYLGhy0OjbMayr.png"
+          alt=""
+          height="170px"
+          width="100%"
+        />
+        <!-- <button class="btn">PAAN ITEMS AVAILABLE HERE</button> -->
+      </div>
+      <div class="category">
+        <img
+          class="images"
+          src="https://ik.imagekit.io/dunzo/home/tr:w-488,h-360_home_icon/dunzo/icons/newHome/promoBanner/kitImageUrl/largeIcons/default_pnd_secondary2_1613527381240.png"
+          alt=""
+          height="170px"
+          width="100%"
+        />
+      </div>
+      <div class="category">
+        <img
+          class="images"
+          src="https://ik.imagekit.io/dunzo/home/tr:w-488,h-360_home_icon/operator-ABHxCyRo8CLcEMC0YE43zsmH2XHFv3xr6B8Y3tIdBpKE1NBAjyHS4vgJY3T3z8AEascTap9OETFY0CdvpHj70KZSGFNrCxkFVtUugsMRkyV5jVk9XHl164PCPop56VNkdpLhfymH86JkFjMlYYgQHK.jpg"
+          alt=""
+          height="170px"
+          width="100%"
+        />
+      </div>
+      <div class="category">
+        <a href="/fruit&vegetables/fruit&vegetables.html"
+          ><img
+            class="images"
+            src="https://ik.imagekit.io/dunzo/home/tr:w-488,h-360_home_icon/dunzo/icons/newHome/promoBanner/kitImageUrl/largeIcons/default_fnv_secondary2_1613527515094.png"
+            alt=""
+            height="170px"
+            width="100%"
+        /></a>
+      </div>
+    </div>
+    <br /><br />
+    <div class="thumb2">
+      <div class="small-box">
+        <img
+          class="cater"
+          src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/default_meat_tertiary_grid_1609739765849.png"
+          alt=""
+          height="40px"
+          width="40px"
+        /><br /><br />
+        &nbsp;&nbsp;Meat and Fish
+      </div>
+      <div class="small-box">
+        <img
+          class="cater"
+          src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/default_pets_tertiary_grid_1609739755734.png"
+          alt=""
+          height="40px"
+          width="40px"
+        /><br /><br />
+        &nbsp;&nbsp;Pet Suppliers
+      </div>
+      <div class="small-box">
+        <img
+          class="cater"
+          src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/paan_grid_1609739855940.png"
+          alt=""
+          height="40px"
+          width="40px"
+        /><br /><br />
+        &nbsp;&nbsp;Paan Shop
+      </div>
+      <div class="small-box">
+        <img
+          class="cater"
+          src="https://ik.imagekit.io/dunzo/home/tr:w-80,h-80_home_icon/icons/R4_Icons/Home/default_others_tertiary_grid_1609739745871.png"
+          alt=""
+          height="40px"
+          width="40px"
+        /><br /><br />
+        &nbsp;&nbsp;Any store in the city
+      </div>
+    </div>
+    <div class="top-picks">
+      <div class="picks">
+        <br />
+        <p style="font-size: 30px; color: #0f1938">Top Picks for you</p>
+        <div class="box1">
+          <div class="box2">
+            <div class="box3"></div>
+          </div>
+        </div>
+        <br /><br />
+        <div class="thumbnails1">
+          <div class="category1">
+            <img
+              class="images"
+              src="https://ik.imagekit.io/dunzo/web-assets/images/d4b.jpg?tr=w-488,h-326,cm-pad_resize"
+              alt=""
+              height="170px"
+              width="100%"
+            />
+          </div>
+          <div class="category">
+            <img
+              class="images"
+              src="https://ik.imagekit.io/dunzo/web-assets/images/grocery.jpg?tr=w-488,h-326,cm-pad_resize"
+              alt=""
+              height="170px"
+              width="100%"
+            />
+          </div>
+          <div class="category">
+            <img
+              class="images"
+              src="https://ik.imagekit.io/dunzo/web-assets/images/restaurants.jpg?tr=w-488,h-326,cm-pad_resize"
+              alt=""
+              height="170px"
+              width="100%"
+            />
+          </div>
+          <div class="category">
+            <img
+              class="images"
+              src="https://ik.imagekit.io/dunzo/web-assets/images/send-packages.jpg?tr=w-488,h-326,cm-pad_resize"
+              alt=""
+              height="170px"
+              width="100%"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile">
+      <div class="download">
+        <div class="mobile-pic">
+          <img
+            src="https://resources.dunzo.com/web-assets/prod/_next/static/images/dunzo-daily-app-preview-94aef67c8616ca5766f6472c9af065f4.png"
+            alt=""
+            height="240px"
+            width="180px"
+          />
+        </div>
+      </div>
+    </div>
+    <p class="dunzo-app">
+      All this from the convenience of your phone.<br />
+      Download the Dunzo mobile app.
+    </p>
+    <img
+      class="google-store"
+      src="https://resources.dunzo.com/web-assets/prod/_next/static/images/playstore-fe053d8036d653fed3955cd2c2a1e7e2.svg"
+      alt=""
+    />
+    <img
+      class="google-store1"
+      src="https://resources.dunzo.com/web-assets/prod/_next/static/images/appstore-43cd8d3a00a6ed32c485951de9b3af63.svg"
+      alt=""
+    />
+    <br /><br />
+    <div class="footer-panel">
+      <div class="foot">
+        <br />
+        <div class="footer-heading"><p>Areas we deliver to</p></div>
+        <div class="places">
+          <div class="places1">
+            <div class="text">
+              <p>Andheri East</p>
+              <p>borivali East</p>
+              <p>Byculla</p>
+              <p>Chruchgate</p>
+              <p>Dadar West</p>
+              <p>Goregaon East</p>
+              <p>Jogeshwari East</p>
+              <p>Kalbadevi</p>
+              <p>Kandivali West</p>
+              <p>Lower Parel</p>
+              <p>Malad East</p>
+              <p>Matunga</p>
+              <p>Nariman Point</p>
+              <p>Powoi - Hiranandani</p>
+              <p>Santacruz West</p>
+              <p>TATA Colony</p>
+              <p>VidyaVihar</p>
+              <p>Worli</p>
+            </div>
+          </div>
+          <div class="places1">
+            <div class="text">
+              <p>Antop Hill</p>
+              <p>Borivali East - Kulupwadi</p>
+              <p>Chakala</p>
+              <p>Ghatkopar East</p>
+              <p>Goregaon West</p>
+              <p>Jogeshwari West</p>
+              <p>Colaba</p>
+              <p>Kalina</p>
+              <p>Kandivali West- Ekta Nagar</p>
+              <p>Mahalakshmi</p>
+              <p>Malad West</p>
+              <p>Mozgaon</p>
+              <p>Parel</p>
+              <p>Sahar Airport</p>
+              <p>Sewri</p>
+              <p>Tardeo</p>
+              <p>Vikhroli East</p>
+            </div>
+          </div>
+          <div class="places1">
+            <div class="text">
+              <p>BKC</p>
+              <p>Borivali West</p>
+              <p>Chembur</p>
+              <p>D N Nagar</p>
+              <p>Ghatkopar West</p>
+              <p>IIT Powai</p>
+              <p>Juhu</p>
+              <p>Kandiwali East</p>
+              <p>Khar - Bandra West</p>
+              <p>Mahim</p>
+              <p>Marol</p>
+              <p>Mysore Colony</p>
+              <p>Parle East</p>
+              <p>Sakinaka</p>
+              <p>Sion</p>
+              <p>Tilak Nagar</p>
+              <p>Vikhroli West</p>
+            </div>
+          </div>
+          <div class="places1">
+            <div class="text">
+              <p>Bandra East</p>
+              <p>borivali West - Gorai</p>
+              <p>Chembur - Trombay</p>
+              <p>Dadar East</p>
+              <p>Girgaon</p>
+              <p>JB Nagar</p>
+              <p>Juhu Tara Road</p>
+              <p>Kandivali East- Hanuman Nagar</p>
+              <p>Lokhandwala- Oshiwara</p>
+              <p>Malabar Hills</p>
+              <p>Marve</p>
+              <p>NESCO</p>
+              <p>Pawai</p>
+              <p>Santracuz East</p>
+              <p>Sion- Koliwada</p>
+              <p>Versova</p>
+              <p>Wadala</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="final-footer">
+      <div class="sub-footer">
+        <div class="footer-head">
+          <br /><br />
+          <p style="color: white; font-size: 16px; font-weight: bold">
+            You can't stop time, but you can save it!
+          </p>
+          <p style="color: #b7bac3; font-size: 14px; font-weight: bold">
+            Living in the city, there is never enough time to shop for
+            groceries, pick-up suppliers, grab food and wade through traffic on
+            the way back home. How about we take care of all of the above for
+            you? What if we can give you all that time back? Sed packages
+            accross the city and get everything from food, groceries, medicines
+            and pet supplies delivered right to your doorstep. From any store to
+            your door, just make a list and we'll make it disappear. Just Dunzo
+            It!
+          </p>
+        </div>
+        <div class="footer-down">
+          <div class="box-a">
+            <img
+              src="https://resources.dunzo.com/web-assets/prod/_next/static/images/logo-footer-a7423f59ce95bf41719960ee8314ff2d.png"
+              alt=""
+              height="65px"
+              width="65px"
+            />
+          </div>
+          <div class="box-b">
+            <div class="ft1">
+              <div class="text1">
+                <p style="font-size: 15px; font-weight: bold">DUNZO</p>
+                <p>About</p>
+                <p>Contact</p>
+                <p>Terms & Conditions</p>
+                <p>Privacy Policy</p>
+                <p>Dunzo for partner</p>
+                <p>Dunzo for business</p>
+              </div>
+            </div>
+            <div class="ft1">
+              <div class="text1">
+                <p style="font-size: 15px; font-weight: bold">
+                  SERVICEABLE CITIES
+                </p>
+                <p>Bangalore</p>
+                <p>Pune</p>
+                <p>Gurgaon</p>
+                <p>Hyderabad</p>
+                <p>New Delhi</p>
+                <p>Chennai</p>
+                <p>Mumbai</p>
+              </div>
+            </div>
+            <div class="ft1">
+              <div class="text1">
+                <p style="font-size: 15px; font-weight: bold">GET IN TOUCH</p>
+                <p>Email</p>
+                <p>Twitter</p>
+                <p>Facebook</p>
+                <p>Instagram</p>
+                <p>Linkedin</p>
+              </div>
+            </div>
+          </div>
+          <div class="box-c">
+            <img
+              src="https://resources.dunzo.com/web-assets/prod/_next/static/images/footer-mascot-37512998a23e1abed75aa6c883d8f0a1.png"
+              alt=""
+              height="250px"
+              width="280px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/afterLogin.js"></script>
+    <script src="./scripts/homepage.js"></script>
+  </body>
+</html>

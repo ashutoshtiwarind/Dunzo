@@ -46,6 +46,7 @@ color: gray;
 }
 #shop{
     display: flex;
+    margin-bottom: 50px;
 }
 #port{
     display: flex;
