@@ -1,0 +1,99 @@
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+  
+      }
+      .remove-btn {
+        background-color: rgb(0, 179, 122);
+        height:30px;
+        border-radius: 50px;
+        border: none;
+        width: 100px;
+    }
+      .cursorPointer:hover {
+        cursor: pointer;
+        outline: none;
+      }
+      .flex-main {
+          border: 1px solid rgb(235, 229, 229);
+          padding: 3%;
+          border-radius: 10px;
+          background-color: #fff;
+      } 
+      .flexSum{
+        width: 470px;
+          height: auto;
+          border: 1px solid rgb(235, 229, 229);
+          border-radius: 10px;
+      }
+      
+      .flexSum{
+          padding:20px;
+          font-family:sf pro display,-apple-system,BlinkMacSystemFont,Roboto,segoe ui,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+          background-color: #fff;
+      }
+
+      .flexSum > h2 {
+          font-weight: unset;
+      }
+      .product-flex-boxes{
+        margin-top: 4%;
+        padding: auto;
+      }
+      #total_in_bold span{
+        font-weight: 800;
+      }
+      .flexSum > button{
+        padding: 13px 20px;
+        width: 60%;
+        height: 48px;
+        margin: 10% 20%;
+        background-color:rgb(0, 210, 144) ;
+        color: white;
+        border-radius: 40px;
+        border: 0px;
+        font-size: 15px;
+         
+      }
+      .flexSum > button:hover{
+        box-shadow: 0px 0px 8px 0px rgb(179, 172, 172);
+      }
+      .flexSum span ,
+      .flexSum p{
+        margin-bottom: 10px;
+      }
+      span {
+          opacity: 0.5;
+      }
+
+      hr {
+          margin-top: 3%;
+      }
+
+      .instruction {
+         display: flex;
+         margin-top: 10%;
+         border: 1px solid rgb(202, 198, 198);;
+          
+      }
+      .instruction input {
+          width: 100%;
+          height: 35px;
+          border: none;
+          outline: none;
+          margin: auto;
+          font-size: 15px;
+         
+      }
+      .instruction > img {
+          width: 7%;
+          height: 35px;
+      }
+      
+      .invoice-flex-boxes {
+          margin-top: 10%;
+      }
+      
